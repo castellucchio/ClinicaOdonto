@@ -1,0 +1,157 @@
+﻿<Window x:Class="Segalla.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Segalla"
+        mc:Ignorable="d"
+        xmlns:viewModels ="clr-namespace:Segalla.ViewModels"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <materialDesign:DialogHost
+        Identifier="RootDialog"
+        DialogTheme="Inherit"
+        SnackbarMessageQueue="{Binding ElementName=MainSnackbar, Path=MessageQueue}">
+
+            <materialDesign:DrawerHost
+            IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
+                <materialDesign:DrawerHost.LeftDrawerContent>
+                    <DockPanel MinWidth="220">
+                        <ToggleButton 
+                        Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
+                        DockPanel.Dock="Top"
+                        HorizontalAlignment="Right" 
+                        Margin="16"
+                        IsChecked="{Binding ElementName=MenuToggleButton, Path=IsChecked, Mode=TwoWay}"/>
+
+                        <StackPanel 
+                        x:Name="DemoItemsListBox" 
+                        Margin="0 16 0 16"
+                        AutomationProperties.Name="DemoPagesListBox">
+
+                            <Button Margin="5" materialDesign:ShadowAssist.ShadowDepth="Depth2" Style="{StaticResource MaterialDesignOutlinedButton}" Name="Inicio" Click="Inicio_Click" Content="Início"/>
+                            <Button Margin="5" materialDesign:ShadowAssist.ShadowDepth="Depth2" Style="{StaticResource MaterialDesignOutlinedButton}" Name="Pacientes" Click="Pacientes_Click" Content="Pacientes"/>
+                            <Button Margin="5" materialDesign:ShadowAssist.ShadowDepth="Depth2" Style="{StaticResource MaterialDesignOutlinedButton}" Name="Consultas" Click="Consultas_Click" Content="Consultas"/>
+                            <Button Margin="5" materialDesign:ShadowAssist.ShadowDepth="Depth2" Style="{StaticResource MaterialDesignOutlinedButton}" Name="Financeiro" Click="Financeiro_Click" Content="Financeiro"/>                                                        
+
+                        </StackPanel>
+                    </DockPanel>
+                </materialDesign:DrawerHost.LeftDrawerContent>
+
+                <DockPanel>
+                    <materialDesign:ColorZone
+                    Padding="16"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                    Mode="PrimaryMid"
+                    DockPanel.Dock="Top">
+                        <DockPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <ToggleButton
+                                x:Name="MenuToggleButton"
+                                Style="{StaticResource MaterialDesignHamburgerToggleButton}"
+                                IsChecked="False"/>                                
+                            </StackPanel>
+
+                            <materialDesign:PopupBox
+                            DockPanel.Dock="Right"
+                            PlacementMode="BottomAndAlignRightEdges"
+                            StaysOpen="False">
+                                <StackPanel>
+                                    <TextBlock Margin="10 0 0 0">Tema</TextBlock>
+                                    <StackPanel
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Center"
+                                    Margin="10">                                        
+                                        <TextBlock
+                                        Text="Claro"
+                                        Margin="0 0 10 0"/>
+                                        <ToggleButton
+                                        x:Name="DarkModeToggleButton"
+                                        Click="DarkModeToggleButton_Click"/>
+                                        <TextBlock
+                                        Text="Escuro"
+                                        Margin="10 0 0 0"/>
+                                    </StackPanel>                                  
+
+                                    <Separator/>
+                                    <Button x:Name="Sobre"
+                                    Content="Sobre"
+                                    Click="Sobre_Click"/>
+
+                                    
+                                    <Button x:Name="Ajuda"
+                                    Content="Ajuda"
+                                    Click="Ajuda_Click"/>
+                                    
+                                    
+                                    <Button x:Name="Desconectar"
+                                    Content="Desconectar"
+                                    Click="Desconectar_Click"/>
+                                </StackPanel>
+                            </materialDesign:PopupBox>
+
+                            <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="22"
+                            AutomationProperties.Name="Material Design In XAML Toolkit"
+                            Text="Odonto Segalla"/>
+                        </DockPanel>
+                    </materialDesign:ColorZone>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>                        
+
+                        <ScrollViewer
+                        x:Name="MainScrollViewer"
+                        Grid.Row="1"
+                        materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True"
+                        HorizontalScrollBarVisibility="{Binding SelectedItem.HorizontalScrollBarVisibilityRequirement, FallbackValue=Disabled}"
+                        VerticalScrollBarVisibility="{Binding SelectedItem.VerticalScrollBarVisibilityRequirement, FallbackValue=Disabled}" >
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Frame Grid.Row="0" x:Name="Panel"/>
+                                <Separator Grid.Row="1"/>
+                                <DockPanel Margin="5" Grid.Row="2">
+                                    <DockPanel.DataContext>
+                                        <viewModels:MainWindowViewModel/>
+                                    </DockPanel.DataContext>
+                                    <TextBlock HorizontalAlignment="Left" >
+                                        <Run>Usuário: </Run>
+                                        <Run>Diego Amaro Castellucchio</Run>
+                                    </TextBlock>
+                                    <TextBlock HorizontalAlignment="Right" Text="{Binding Path=DataSistema,UpdateSourceTrigger=PropertyChanged}" />
+
+
+                                </DockPanel>
+                            </Grid>                            
+                        </ScrollViewer>
+
+                        <materialDesign:Snackbar
+                        x:Name="MainSnackbar"
+                        MessageQueue="{materialDesign:MessageQueue}"
+                        Grid.Row="1"/>
+                    </Grid>
+                </DockPanel>
+            </materialDesign:DrawerHost>
+        </materialDesign:DialogHost>
+    </Grid>
+</Window>

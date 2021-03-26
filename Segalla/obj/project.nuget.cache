@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "BraRdC8vIH79TVrDgMyqQBV4WRV0sMc2476CBUIlQS+vdQwRICa8fufOmkrKRu0PMzXJMNsSehjBo22xO4PBbA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Diego Castellucchio\\source\\repos\\Segalla\\Segalla\\Segalla.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Diego Castellucchio\\.nuget\\packages\\controlzex\\4.3.0\\controlzex.4.3.0.nupkg.sha512",
+    "C:\\Users\\Diego Castellucchio\\.nuget\\packages\\fody\\6.4.0\\fody.6.4.0.nupkg.sha512",
+    "C:\\Users\\Diego Castellucchio\\.nuget\\packages\\mahapps.metro\\2.0.0\\mahapps.metro.2.0.0.nupkg.sha512",
+    "C:\\Users\\Diego Castellucchio\\.nuget\\packages\\materialdesigncolors\\2.0.0\\materialdesigncolors.2.0.0.nupkg.sha512",
+    "C:\\Users\\Diego Castellucchio\\.nuget\\packages\\materialdesignthemes\\4.0.0\\materialdesignthemes.4.0.0.nupkg.sha512",
+    "C:\\Users\\Diego Castellucchio\\.nuget\\packages\\materialdesignthemes.mahapps\\0.1.6\\materialdesignthemes.mahapps.0.1.6.nupkg.sha512",
+    "C:\\Users\\Diego Castellucchio\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.19\\microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
+    "C:\\Users\\Diego Castellucchio\\.nuget\\packages\\propertychanged.fody\\3.3.3\\propertychanged.fody.3.3.3.nupkg.sha512",
+    "C:\\Users\\Diego Castellucchio\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512"
+  ],
+  "logs": []
+}
