@@ -33,3 +33,14 @@ C:\Users\Diego Castellucchio\source\repos\Segalla\Segalla\obj\Debug\net5.0-windo
 C:\Users\Diego Castellucchio\source\repos\Segalla\Segalla\obj\Debug\net5.0-windows\Views\Sobre.g.cs
 C:\Users\Diego Castellucchio\source\repos\Segalla\Segalla\obj\Debug\net5.0-windows\Views\Sobre.baml
 C:\Users\Diego Castellucchio\source\repos\Segalla\Segalla\bin\Debug\net5.0-windows\Segalla.dll.config
+C:\Users\Diego Castellucchio\source\repos\Segalla\Segalla\bin\Debug\net5.0-windows\Microsoft.Data.Sqlite.dll
+C:\Users\Diego Castellucchio\source\repos\Segalla\Segalla\bin\Debug\net5.0-windows\SQLitePCLRaw.core.dll
+C:\Users\Diego Castellucchio\source\repos\Segalla\Segalla\bin\Debug\net5.0-windows\System.Data.SQLite.dll
+C:\Users\Diego Castellucchio\source\repos\Segalla\Segalla\bin\Debug\net5.0-windows\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Users\Diego Castellucchio\source\repos\Segalla\Segalla\bin\Debug\net5.0-windows\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Users\Diego Castellucchio\source\repos\Segalla\Segalla\bin\Debug\net5.0-windows\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Users\Diego Castellucchio\source\repos\Segalla\Segalla\bin\Debug\net5.0-windows\runtimes\win-x86\native\SQLite.Interop.dll
+C:\Users\Diego Castellucchio\source\repos\Segalla\Segalla\bin\Debug\net5.0-windows\Segalla.db
+C:\Users\Diego Castellucchio\source\repos\Segalla\Segalla\obj\Debug\net5.0-windows\Segalla_Content.g.cs
+C:\Users\Diego Castellucchio\source\repos\Segalla\Segalla\bin\Debug\net5.0-windows\Dapper.dll
+C:\Users\Diego Castellucchio\source\repos\Segalla\Segalla\bin\Debug\net5.0-windows\Dapper.Contrib.dll
